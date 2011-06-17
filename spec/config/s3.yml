@@ -1,0 +1,4 @@
+test:
+  access_key_id: BOGUSBOGUSBOGUSBOGUS
+  secret_access_key: BOGUSBOGUSBOGUSBOGUSBOGUSBOGUSBOGUSBOGUS
+  bucket: bogus-bucket

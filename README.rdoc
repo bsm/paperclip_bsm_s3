@@ -1,0 +1,1 @@
+BSM's S3 extensions/shortcuts to Paperclip
