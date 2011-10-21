@@ -25,14 +25,13 @@ Paperclip::Railtie.insert
 
 require 'paperclip_bsm_s3'
 
-class User < ActiveRecord::Base
-  def self.columns
-    @columns ||= [
-      ActiveRecord::ConnectionAdapters::Column.new('photo_file_name', nil, 'string'),
-      ActiveRecord::ConnectionAdapters::Column.new('photo_file_size', nil, 'int'),
-      ActiveRecord::ConnectionAdapters::Column.new('photo_content_type', nil, 'string'),
-    ]
-  end
+ActiveRecord::Base.establish_connection :adapter => "sqlite3", :database => ":memory:"
+ActiveRecord::Base.connection.create_table :users do |t|
+  t.string  :photo_content_type
+  t.string  :photo_file_name
+  t.integer :photo_file_size
+end
 
-  has_s3_attached_file :photo, :removable => true
+class User < ActiveRecord::Base
+  has_s3_attached_file :photo
 end
