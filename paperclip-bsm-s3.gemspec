@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.name        = "paperclip-bsm-s3"
   s.summary     = "Custom extensions to Paperclip"
-  s.version     = '0.2.0'
+  s.version     = '0.2.1'
 
   s.authors     = ["Dimitrij Denissenko"]
   s.email       = "dimitrij@blacksquaremedia.com"
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files        = Dir['LICENSE', 'README.rdoc', 'lib/**/*', 'rails/**/*']
 
   s.add_dependency "paperclip", ">= 2.3.0", "< 2.5.0"
-  s.add_dependency "aws-s3"
+  s.add_development_dependency "aws-s3"
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "sqlite3-ruby"

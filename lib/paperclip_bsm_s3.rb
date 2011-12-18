@@ -1,6 +1,5 @@
 require 'paperclip'
 require 'paperclip/storage/s3'
-require 'aws/s3'
 
 module Paperclip # :nodoc:
 
@@ -23,12 +22,4 @@ module Paperclip # :nodoc:
     end
 
   end
-end
-
-Paperclip::Storage::S3.module_eval do
-
-  def expiring_url(style_name = default_style, opts = {})
-    AWS::S3::S3Object.url_for path(style_name), bucket_name, opts.reverse_merge(:expires_in => 3600, :use_ssl => true)
-  end
-
 end
