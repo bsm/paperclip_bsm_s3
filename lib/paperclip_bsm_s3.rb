@@ -1,6 +1,5 @@
 require 'paperclip'
 require 'paperclip/storage/s3'
-require 'aws/s3'
 
 module Paperclip # :nodoc:
 
